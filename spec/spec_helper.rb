@@ -93,7 +93,7 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
-  RSpec.configure do |config|
-    config.include Rails.application.routes.url_helpers
-  end
+  # RSpec.configure do |config|
+  #   config.include Rails.application.routes.url_helpers
+  # end
 end
