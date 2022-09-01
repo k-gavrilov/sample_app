@@ -39,4 +39,4 @@ yarn-debug.log*
 db/test.*
 
 # Ignore idea settings
-/.idea
+/.idea/*
