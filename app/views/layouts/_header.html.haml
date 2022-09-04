@@ -8,14 +8,14 @@
         - if logged_in?
           %li= link_to "Users", '#'
           %li.dropdown
-            %a.dropdown-toggle{'href' => '#', 'data-toggle' => 'dropdown'}
+            %a.btn.dropdown-toggle#my-toggle-button{'href' => '#', 'data-toggle' => 'dropdown', 'type' => 'button', 'data-bs-toggle'=>"dropdown", 'aria-expanded'=>"false"}
               Account
               %b.caret
-            %ul.dropdown-menu
-              %li= link_to "Profile", current_user
-              %li= link_to "Settings", '#'
-              %li.divider
-              %li= link_to "Log out", logout_path, method: :delete
+            %ul.dropdown-menu{'aria-labelledby' => "my-toggle-button"}
+              %li.dropdown-item= link_to "Profile", current_user
+              %li.dropdown-item= link_to "Settings", '#'
+              %li.dropdown-item.divider
+              %li.dropdown-item= link_to "Log out", logout_path, method: :delete
         - else
           %li= link_to "Log in", login_path
 
