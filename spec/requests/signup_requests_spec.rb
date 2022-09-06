@@ -1,4 +1,9 @@
 require 'rails_helper'
+require './spec/support/session_helpers'
+
+RSpec.configure do |c|
+  c.include SessionHelpers
+end
 
 RSpec.describe "SignupRequests", type: :request do
   it "shouldn't sign_up with invalid params" do
@@ -35,5 +40,6 @@ RSpec.describe "SignupRequests", type: :request do
     follow_redirect!
     assert_template 'users/show'
     expect(flash).not_to be_empty
+    assert is_logged_in?
   end
 end
