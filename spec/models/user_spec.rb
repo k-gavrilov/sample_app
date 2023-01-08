@@ -56,4 +56,8 @@ foo@bar_baz.com foo@bar+baz.com foo@bar..com]
     user = build(:user, password: short_password, password_confirmation: short_password)
     expect(user).to be_invalid
   end
+
+  it 'should return false on calling authenticated? on a user without digest' do
+    expect(build(:user).authenticated?('')).to be_falsey
+  end
 end
